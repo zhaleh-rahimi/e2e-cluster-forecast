@@ -1,5 +1,3 @@
-# cluster-forecast
-A clustering-based forecasting framework for several heterogeneous disaggregated time-series
 # Implementation of "Clustering-based demand forecasting with an application to immunoglobulin products"
 
 This repository contains the implementation of the paper ["Clustering-based demand forecasting with an application to immunoglobulin products"]([https://www.sciencedirect.com/science/article/pii/S3050784725000030](https://www.sciencedirect.com/science/article/pii/S3050784725000030)). The paper presents an iterative clustering-based demand forecasting framework designed to improve demand predictions where several heterogeneous disaggregated time-series exist especially in healthcare settings.
