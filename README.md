@@ -33,6 +33,3 @@ publisher = {Elsevier}
 
 For any questions, feel free to reach out to (rhmi.zhle[at]gmail.com)!
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
