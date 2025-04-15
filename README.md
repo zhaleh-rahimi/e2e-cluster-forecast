@@ -1,4 +1,4 @@
-This repository contains the implementation of the framework proposed in  [Clustering-based demand forecasting](https://www.sciencedirect.com/science/article/pii/S3050784725000030)(https://www.sciencedirect.com/science/article/pii/S3050784725000030)). The paper presents an iterative clustering-based demand forecasting framework designed to improve demand predictions where several heterogeneous disaggregated time-series exist especially in healthcare settings.
+This repository contains the implementation of the framework proposed in [Clustering-based Demand Forecasting](https://www.sciencedirect.com/science/article/pii/S3050784725000030)(https://www.sciencedirect.com/science/article/pii/S3050784725000030)). The paper presents an iterative clustering-based demand forecasting framework designed to improve demand predictions where several heterogeneous disaggregated time-series exist especially in healthcare settings.
 
 ## Overview
 
