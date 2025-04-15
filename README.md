@@ -7,11 +7,11 @@ The proposed framework clusters patients based on domain-specific and time-serie
 
 The proposed clustering-based forecasting framework considers the following components:
 1. **Clustering phase**:
-We will utilize domain expertise and available datasets to determine the patient-level features that are most relevant to Ig demand. Following this, the patients will be grouped into clusters by unsupervised learning.
+Utilizes domain expertise and available datasets to determine the patient-level features that are most relevant to demand. Following this, the patients will be grouped into clusters by unsupervised learning.
 2. **Forecasting phase**:
-The demand data will be separated according to the cluster labels and aggregated based on the chosen time granularity. We will then predict the demand for each cluster and combine the demand forecasts.
+The demand data will be separated according to the cluster labels and aggregated based on the chosen time granularity. Then the demand for each cluster is predicted and the demand forecasts are combined.
 3. **Iterative Refinement**:
-Our final phase involves refining our forecasting results by iterating over an identified parameter set in the clustering or forecasting phase. We aim to meet either condition (5) or (6), depending on the chosen metric, and find the optimal clustering scheme for the best forecasting outcome.
+Final phase involves refining forecasting results by iterating over an identified parameter set in the clustering or forecasting phase. Depending on the chosen performance metric, find the optimal clustering scheme for the best forecasting outcome.
 
 ## Citation
 
