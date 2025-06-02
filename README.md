@@ -20,8 +20,8 @@ e2e-cluster-forecast/
 │   └── ensemble_model.py
 ├── utils/
 │   └── utils.py
-├── exploration/
-│   └── eda.ipynb
+├── demo_forecasting.ipynb
+├── demo.py   
 ├── main.py
 ├── requirements.txt
 └── README.md
@@ -37,6 +37,8 @@ e2e-cluster-forecast/
 - Deep Learning: RNN, LSTM
 - Modern: Prophet
 - Ensemble methods: Stacking/Averaging multiple weak learners
+- Clustering-based forecasting on Google cluster data
+
 
 ---
 
@@ -50,16 +52,43 @@ Generated on the fly using `data/data_generator.py`.
 - Save the CSV locally and run with `--source google --filepath path/to/google.csv`
 
 ---
+## Clustering-Based Forecasting Method
+1. Clustering is applied to the training data (using KMeans by default).
 
+2. Separate forecasting models are trained per cluster.
+
+3. Test data points are assigned to clusters.
+
+4. Forecasts are generated using the model corresponding to each test point’s cluster.
+
+5. This method often improves accuracy by leveraging pattern similarities within clusters.
+
+
+---
 ## How to Run
 
 ### CLI (Command Line)
 ```bash
-# Synthetic data
-python main.py --source synthetic --n_samples 1000
+python main.py --model <model_name> --data <data_source>
 
-# Google data
-python main.py --source google --filepath data/google_cluster_sample.csv
+```
+### Options:
+```
+| Argument  | Description              | Possible Values                                     | Default      |
+| --------- | ------------------------ | --------------------------------------------------- | ------------ |
+| `--model` | Forecasting model to use | `regression`, `xgboost`, `lstm`, `cluster_forecast` | **Required** |
+| `--data`  | Dataset to use           | `synthetic`, `google`                               | `synthetic`  |
+```
+
+### Example:
+```
+python main.py --model cluster_forecast --data synthetic
+```
+
+### Demo script
+To run multiple model and dataset combinations automatically, use:
+```
+python demo.py
 
 ```
 ---
