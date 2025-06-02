@@ -1,21 +1,68 @@
 # End-to end Clustering-based Demand Forecasting
-This repository contains the implementation of the framework proposed in [Clustering-based Demand Forecasting](https://www.sciencedirect.com/science/article/pii/S3050784725000030). The paper presents an iterative clustering-based demand forecasting framework designed to improve demand predictions where several heterogeneous disaggregated time-series exist especially in healthcare settings.
-
-## Overview
-
-The proposed framework clusters patients based on domain-specific and time-series related features and iteratively refines these clusters to enhance forecasting accuracy. This approach addresses the challenges of heterogeneous patient populations and varying demand patterns in healthcare services. While previous studies consider these two steps (clustering and forecasting) separated, the proposed framework optimize the clustering phase based on final forecasting performance.
+This project implements demand forecasting by first clustering similar data segments, then applying a range of forecasting models. The system supports both synthetic and real-world datasets, and allows CLI and Jupyter-based workflows.
 
 
-The proposed clustering-based forecasting framework considers the following components:
-1. **Clustering phase**:
-Utilizes domain expertise and available datasets to determine the patient-level features that are most relevant to demand. Following this, the patients will be grouped into clusters by unsupervised learning.
-2. **Forecasting phase**:
-The demand data will be separated according to the cluster labels and aggregated based on the chosen time granularity. Then the demand for each cluster is predicted and the demand forecasts are combined.
-3. **Iterative Refinement**:
-Final phase involves refining forecasting results by iterating over an identified parameter set in the clustering or forecasting phase. Depending on the chosen performance metric, find the optimal clustering scheme for the best forecasting outcome.
+## Project Structure
+e2e-cluster-forecast/
+├── clustering/
+│   └── cluster_model.py
+├── data/
+│   ├── data_generator.py
+│   └── google_cluster_data.py
+├── forecasting/
+│   ├── base_model.py
+│   ├── regression.py
+│   ├── arima_model.py
+│   ├── prophet_model.py
+│   ├── lstm_model.py
+│   ├── xgboost_model.py
+│   └── ensemble_model.py
+├── utils/
+│   └── utils.py
+├── exploration/
+│   └── eda.ipynb
+├── main.py
+├── requirements.txt
+└── README.md
 
-## Citation
 
+---
+
+## Supported Forecasting Models
+
+- Naive models: Last value, average
+- Classical: Linear Regression, AR, ARIMA, Exponential Smoothing
+- Machine Learning: XGBoost
+- Deep Learning: RNN, LSTM
+- Modern: Prophet
+- Ensemble methods: Stacking/Averaging multiple weak learners
+
+---
+
+## Datasets
+
+### 1. Synthetic (default)
+Generated on the fly using `data/data_generator.py`.
+
+### 2. Google Cluster Data (real)
+- Dataset: [Google 2019 Cluster Sample](https://www.kaggle.com/datasets/derrickmwiti/google-2019-cluster-sample)
+- Save the CSV locally and run with `--source google --filepath path/to/google.csv`
+
+---
+
+## How to Run
+
+### CLI (Command Line)
+```bash
+# Synthetic data
+python main.py --source synthetic --n_samples 1000
+
+# Google data
+python main.py --source google --filepath data/google_cluster_sample.csv
+
+```
+---
+## Reference
 
 ```
 @article{RAHIMI2025200469,
