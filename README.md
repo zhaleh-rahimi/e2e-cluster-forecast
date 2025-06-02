@@ -109,14 +109,5 @@ publisher = {Elsevier}
 }
 ```
 
-For any questions, feel free to reach out to (rhmi.zhle[at]gmail.com)!
 
-# Cluster-Based Forecasting Project
-
-This repository implements forecasting models with a special focus on a clustering-based forecasting method inspired by the paper:  
-[Cluster-based forecasting using machine learning](https://www.sciencedirect.com/science/article/pii/S3050784725000030).
-
----
-
-## Project Structure
 
